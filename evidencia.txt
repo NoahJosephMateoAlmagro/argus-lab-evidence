@@ -1,0 +1,10 @@
+# Evidence file for ARGUS tests
+emails:
+admin@noahjoseph.example
+dev@noahjoseph.example
+security@noahjoseph.example
+
+subdomains:
+api.noahjoseph.example
+mail.noahjoseph.example
+vpn.noahjoseph.example
