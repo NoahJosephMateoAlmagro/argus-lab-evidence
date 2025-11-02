@@ -1,0 +1,40 @@
+@"
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lab Evidence - Test Page</title>
+  <meta name="robots" content="index,follow">
+</head>
+<body>
+  <h1>Lab Evidence — Página de pruebas</h1>
+
+  <p>Contacto visible: <a href="mailto:admin@test.example">admin@test.example</a></p>
+
+  <p>Contacto ofuscado:
+    <script>
+      (function(){
+        const b = "bWFpbHRvOmFkbWluQHRlc3QuZXhhbXBsZQ==";
+        const s = atob(b);
+        var a = document.createElement('a');
+        a.setAttribute('href', s);
+        a.textContent = s.replace('mailto:','');
+        document.currentScript.parentNode.appendChild(a);
+      })();
+    </script>
+  </p>
+
+  <!-- admin-comment: admin-comment@test.example -->
+
+  <p>PDF de ejemplo: <a href="/assets/pdfs/test_doc.pdf">test_doc.pdf</a></p>
+  <p>Imagen con EXIF: <a href="/assets/images/test_exif.jpg">test_exif.jpg</a></p>
+
+  <form action="/submit" method="post">
+    <label>Nombre: <input name="name"></label>
+    <input type="hidden" name="admin_email" value="admin-hidden@test.example">
+    <button>Enviar</button>
+  </form>
+
+</body>
+</html>
+"@ > .\docs\index.html
